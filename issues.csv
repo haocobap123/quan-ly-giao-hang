@@ -1,0 +1,28 @@
+﻿Story,Tên,Sprint (milestone),Điểm,Ưu tiên,Nhóm chức năng,Tiêu chí chấp nhận
+PB01,Khởi tạo dự án .NET 8 + MySQL,Sprint 1,5,Must,1. Nền tảng hệ thống,dotnet run chạy được; migration tạo CSDL MySQL (Pomelo); có README hướng dẫn chạy
+PB02,Đăng nhập và phân quyền theo vai trò,Sprint 1,5,Must,1. Nền tảng hệ thống,ASP.NET Core Identity; seed 4 vai trò + tài khoản mẫu; vào trang không đủ quyền bị chặn
+PB03,Quản lý tài khoản nhân viên,Sprint 1,3,Must,1. Nền tảng hệ thống,Admin thêm/sửa/khóa tài khoản; không cho tự khóa chính mình
+PB04,Nhận mã đơn hàng từ website bán hàng (API),Sprint 2,5,Must,2. Nhận mã đơn hàng,POST /api/orders + API key; mã trùng/sai trả lỗi; đơn mới ở trạng thái Chưa nhận; test bằng Postman
+PB05,Gửi yêu cầu giao hàng đến nhận hàng từ công ty,Sprint 2,3,Must,2. Nhận mã đơn hàng,Danh sách đơn Chưa nhận; chọn nhân viên đi lấy; lưu thời điểm và người gửi yêu cầu
+PB06,Cập nhật trạng thái đơn hàng tuần tự,Sprint 2,3,Must,3. Cập nhật trạng thái đơn hàng,"Không nhảy cóc/lùi trạng thái; lưu lịch sử người đổi, thời gian; dùng chung cho các story sau"
+PB07,Quản lý bảng báo giá,Sprint 2,3,Must,4. Nhận hàng hóa từ công ty - Kiểm tra hàng và báo giá,Thêm/sửa/ẩn dòng giá; khoảng giá không chồng lấn; có ngày áp dụng
+PB08,Kiểm tra hàng hóa,Sprint 2,5,Must,4. Nhận hàng hóa từ công ty - Kiểm tra hàng và báo giá,Căn cứ chọn phương tiện và mức giá; validate số > 0; chỉ nhập cho đơn đã có yêu cầu lấy hàng
+PB09,"Đề xuất, chọn phương tiện giao hàng",Sprint 3,3,Should,4. Nhận hàng hóa từ công ty - Kiểm tra hàng và báo giá,"Gợi ý theo trọng lượng, kích thước, khoảng cách; cho đổi thủ công; dùng danh mục PB15"
+PB10,Đưa ra mức giá theo bảng báo giá,Sprint 3,3,Must,4. Nhận hàng hóa từ công ty - Kiểm tra hàng và báo giá,Tự tính giá từ đặc điểm hàng; hiển thị chi tiết phí; báo lỗi khi không có dòng giá phù hợp
+PB11,Nhập thông tin gói hàng,Sprint 3,3,Must,5. Nhận hàng hóa từ công ty - Nhập thông tin gói hàng,SĐT đúng định dạng VN (10 số); mã hàng khớp mã đơn; lưu xong chuyển Đã nhận - Chưa giao
+PB12,Khai báo thông số kèm theo,Sprint 3,3,Must,5. Nhận hàng hóa từ công ty - Nhập thông tin gói hàng,Chọn Thu tiền thì bắt buộc nhập số tiền > 0; hàng dễ vỡ/trị giá ghi nhận riêng
+PB15,"Quản lý danh mục loại hàng, tuyến xe, phương tiện",Sprint 3,3,Must,7. Phân loại hàng,"Loại hàng: gói nhỏ, bọc van, bọc, bao, thùng, bao PB, hộp thùng, tivi, laptop, CPU, xe..."
+PB16,Phân loại hàng hóa theo kích cỡ và tuyến xe,Sprint 3,5,Must,7. Phân loại hàng,Gán loại hàng + tuyến xe; gợi ý theo kích thước; danh sách gói theo tuyến xe
+PB13,Nhận tiền gửi thường (thu khi giao hàng),Sprint 4,3,Must,6. Nhận hàng hóa từ công ty - Nhận tiền,"Chỉ áp dụng gửi thường; nhập số tiền thực thu, đối chiếu số cần thu"
+PB14,Nhận tiền gửi nhanh (chuyển khoản/trực tuyến),Sprint 4,5,Must,6. Nhận hàng hóa từ công ty - Nhận tiền,VNPay Sandbox hoặc giả lập; xác thực chữ ký callback; chưa thanh toán không được xuất giao
+PB17,Phân công nhân viên giao hàng,Sprint 4,3,Must,8. Giao hàng,Chọn nhân viên giao hàng; nhân viên thấy đơn được giao trên điện thoại; lưu lịch sử phân công
+PB18,Giao hàng thường,Sprint 4,5,Must,8. Giao hàng,Gom đơn cùng tuyến vào 1 chuyến; khi xuất phát chuyển Đã nhận - Đang giao
+PB23,Lập phiếu giao hàng,Sprint 4,3,Must,10. Trả hàng cho khách,"Phiếu có mã, địa chỉ, phường/xã, SĐT, tiền thu, cờ dễ vỡ/trị giá; in được"
+PB19,Giao hàng nhanh,Sprint 5,5,Must,8. Giao hàng,Mỗi đơn 1 chuyến riêng; phụ phí nhanh từ bảng giá; phải thanh toán (PB14) trước khi xuất phát
+PB20,Cài đặt điểm check-in trên bản đồ,Sprint 5,5,Must,9. Module check-in vị trí khi giao hàng,"Leaflet + OpenStreetMap; lưu vĩ độ, kinh độ, bán kính mặc định 100 m; gắn điểm vào tuyến"
+PB21,Tự động check-in khi qua điểm đã cài đặt,Sprint 5,8,Must,9. Module check-in vị trí khi giao hàng,"Geolocation API (HTTPS) + Haversine; 1 lần/điểm/chuyến; hạn chế: phải mở trang, không chạy nền"
+PB22,Khách hàng theo dõi hành trình đơn hàng,Sprint 6,5,Must,9. Module check-in vị trí khi giao hàng,Nhập mã đơn + SĐT; timeline check-in + bản đồ; cập nhật bằng SignalR
+PB24,"Giao tận nơi, xác nhận đã giao theo phiếu",Sprint 6,3,Must,10. Trả hàng cho khách,"Bấm Đã giao (ghi thời gian, vị trí); có thu tiền thì hoàn tất PB13 trước; đơn chuyển Đã giao"
+PB25,Báo giao thất bại và hoàn hàng,Sprint 6,3,Could,10. Trả hàng cho khách,"Ngoài 4 trạng thái của đề, cần hỏi giảng viên trước khi làm"
+PB26,Tra cứu đơn hàng,Sprint 6,3,Should,11. Tra cứu và báo cáo,Lọc kết hợp nhiều tiêu chí; phân trang; xem lịch sử trạng thái
+PB27,Báo cáo thống kê,Sprint 6,3,Could,11. Tra cứu và báo cáo,"Thống kê theo trạng thái, theo ngày; tổng tiền thu; xuất Excel"
